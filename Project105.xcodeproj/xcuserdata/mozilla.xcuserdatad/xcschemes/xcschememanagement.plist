@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ShareOverlay.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>0B212D4219EE472C00A3D278</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0BA7149819EEE99600E1F38A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

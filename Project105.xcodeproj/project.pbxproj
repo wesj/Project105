@@ -14,6 +14,12 @@
 		0B212D3B19EE472C00A3D278 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B212D3A19EE472C00A3D278 /* Images.xcassets */; };
 		0B212D3E19EE472C00A3D278 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B212D3C19EE472C00A3D278 /* LaunchScreen.xib */; };
 		0B212D4A19EE472C00A3D278 /* Project105Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D4919EE472C00A3D278 /* Project105Tests.swift */; };
+		0BA7149E19EEE99600E1F38A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7149D19EEE99600E1F38A /* ShareViewController.swift */; };
+		0BA714A019EEE99600E1F38A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */; };
+		0BA714A319EEE99600E1F38A /* ShareOverlay.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0BA7149919EEE99600E1F38A /* ShareOverlay.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0BA714AB19EF133900E1F38A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA714AA19EF133900E1F38A /* libsqlite3.dylib */; };
+		0BA714CA19EF3B9300E1F38A /* ReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA714C919EF3B9300E1F38A /* ReadingList.swift */; };
+		0BA714CD19EF3C4000E1F38A /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA714CC19EF3C4000E1F38A /* SwiftData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +30,35 @@
 			remoteGlobalIDString = 0B212D2B19EE472C00A3D278;
 			remoteInfo = Project105;
 		};
+		0BA714A119EEE99600E1F38A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B212D2419EE472C00A3D278 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BA7149819EEE99600E1F38A;
+			remoteInfo = ShareOverlay;
+		};
+		0BA714A419EEE99600E1F38A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B212D2419EE472C00A3D278 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BA7149819EEE99600E1F38A;
+			remoteInfo = ShareOverlay;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0BA714A919EEE99600E1F38A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0BA714A319EEE99600E1F38A /* ShareOverlay.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B212D2C19EE472C00A3D278 /* Project105.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project105.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +72,14 @@
 		0B212D4319EE472C00A3D278 /* Project105Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project105Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B212D4819EE472C00A3D278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B212D4919EE472C00A3D278 /* Project105Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project105Tests.swift; sourceTree = "<group>"; };
+		0BA7149919EEE99600E1F38A /* ShareOverlay.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareOverlay.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BA7149C19EEE99600E1F38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BA7149D19EEE99600E1F38A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		0BA714AA19EF133900E1F38A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		0BA714AF19EF1B7C00E1F38A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		0BA714C919EF3B9300E1F38A /* ReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingList.swift; path = Project105/ReadingList.swift; sourceTree = SOURCE_ROOT; };
+		0BA714CC19EF3C4000E1F38A /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftData.swift; path = Project105/SwiftData.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,14 +97,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0BA7149619EEE99600E1F38A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BA714AB19EF133900E1F38A /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0B212D2319EE472C00A3D278 = {
 			isa = PBXGroup;
 			children = (
+				0BA714AF19EF1B7C00E1F38A /* Bridging-Header.h */,
+				0BA714AA19EF133900E1F38A /* libsqlite3.dylib */,
 				0B212D2E19EE472C00A3D278 /* Project105 */,
 				0B212D4619EE472C00A3D278 /* Project105Tests */,
+				0BA7149A19EEE99600E1F38A /* ShareOverlay */,
 				0B212D2D19EE472C00A3D278 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +125,7 @@
 			children = (
 				0B212D2C19EE472C00A3D278 /* Project105.app */,
 				0B212D4319EE472C00A3D278 /* Project105Tests.xctest */,
+				0BA7149919EEE99600E1F38A /* ShareOverlay.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +169,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0BA7149A19EEE99600E1F38A /* ShareOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				0BA714CC19EF3C4000E1F38A /* SwiftData.swift */,
+				0BA714C919EF3B9300E1F38A /* ReadingList.swift */,
+				0BA7149D19EEE99600E1F38A /* ShareViewController.swift */,
+				0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */,
+				0BA7149B19EEE99600E1F38A /* Supporting Files */,
+			);
+			path = ShareOverlay;
+			sourceTree = "<group>";
+		};
+		0BA7149B19EEE99600E1F38A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BA7149C19EEE99600E1F38A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,10 +199,13 @@
 				0B212D2819EE472C00A3D278 /* Sources */,
 				0B212D2919EE472C00A3D278 /* Frameworks */,
 				0B212D2A19EE472C00A3D278 /* Resources */,
+				0BA714A919EEE99600E1F38A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0BA714A219EEE99600E1F38A /* PBXTargetDependency */,
+				0BA714A519EEE99600E1F38A /* PBXTargetDependency */,
 			);
 			name = Project105;
 			productName = Project105;
@@ -153,6 +230,23 @@
 			productReference = 0B212D4319EE472C00A3D278 /* Project105Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0BA7149819EEE99600E1F38A /* ShareOverlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BA714A819EEE99600E1F38A /* Build configuration list for PBXNativeTarget "ShareOverlay" */;
+			buildPhases = (
+				0BA7149519EEE99600E1F38A /* Sources */,
+				0BA7149619EEE99600E1F38A /* Frameworks */,
+				0BA7149719EEE99600E1F38A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareOverlay;
+			productName = ShareOverlay;
+			productReference = 0BA7149919EEE99600E1F38A /* ShareOverlay.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,6 +262,9 @@
 					0B212D4219EE472C00A3D278 = {
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 0B212D2B19EE472C00A3D278;
+					};
+					0BA7149819EEE99600E1F38A = {
+						CreatedOnToolsVersion = 6.0.1;
 					};
 				};
 			};
@@ -186,6 +283,7 @@
 			targets = (
 				0B212D2B19EE472C00A3D278 /* Project105 */,
 				0B212D4219EE472C00A3D278 /* Project105Tests */,
+				0BA7149819EEE99600E1F38A /* ShareOverlay */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +303,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BA7149719EEE99600E1F38A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BA714A019EEE99600E1F38A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +335,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0BA7149519EEE99600E1F38A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BA714CA19EF3B9300E1F38A /* ReadingList.swift in Sources */,
+				0BA714CD19EF3C4000E1F38A /* SwiftData.swift in Sources */,
+				0BA7149E19EEE99600E1F38A /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -236,6 +352,16 @@
 			isa = PBXTargetDependency;
 			target = 0B212D2B19EE472C00A3D278 /* Project105 */;
 			targetProxy = 0B212D4419EE472C00A3D278 /* PBXContainerItemProxy */;
+		};
+		0BA714A219EEE99600E1F38A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BA7149819EEE99600E1F38A /* ShareOverlay */;
+			targetProxy = 0BA714A119EEE99600E1F38A /* PBXContainerItemProxy */;
+		};
+		0BA714A519EEE99600E1F38A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BA7149819EEE99600E1F38A /* ShareOverlay */;
+			targetProxy = 0BA714A419EEE99600E1F38A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -394,6 +520,38 @@
 			};
 			name = Release;
 		};
+		0BA714A619EEE99600E1F38A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShareOverlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		0BA714A719EEE99600E1F38A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ShareOverlay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +571,7 @@
 				0B212D4F19EE472C00A3D278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B212D5019EE472C00A3D278 /* Build configuration list for PBXNativeTarget "Project105Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +580,16 @@
 				0B212D5219EE472C00A3D278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BA714A819EEE99600E1F38A /* Build configuration list for PBXNativeTarget "ShareOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BA714A619EEE99600E1F38A /* Debug */,
+				0BA714A719EEE99600E1F38A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
