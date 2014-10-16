@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B209FDD19F05BE100BACD50 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FDC19F05BE100BACD50 /* TableCell.xib */; };
 		0B212D3219EE472C00A3D278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3119EE472C00A3D278 /* AppDelegate.swift */; };
 		0B212D3419EE472C00A3D278 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3319EE472C00A3D278 /* FirstViewController.swift */; };
 		0B212D3619EE472C00A3D278 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3519EE472C00A3D278 /* SecondViewController.swift */; };
@@ -14,6 +15,7 @@
 		0B212D3B19EE472C00A3D278 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B212D3A19EE472C00A3D278 /* Images.xcassets */; };
 		0B212D3E19EE472C00A3D278 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B212D3C19EE472C00A3D278 /* LaunchScreen.xib */; };
 		0B212D4A19EE472C00A3D278 /* Project105Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D4919EE472C00A3D278 /* Project105Tests.swift */; };
+		0B74BDDB19F03840005F3599 /* ShareTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B74BDDA19F03840005F3599 /* ShareTableViewDataSource.swift */; };
 		0BA7149E19EEE99600E1F38A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA7149D19EEE99600E1F38A /* ShareViewController.swift */; };
 		0BA714A019EEE99600E1F38A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */; };
 		0BA714A319EEE99600E1F38A /* ShareOverlay.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0BA7149919EEE99600E1F38A /* ShareOverlay.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -61,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B209FDC19F05BE100BACD50 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		0B212D2C19EE472C00A3D278 /* Project105.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project105.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B212D3019EE472C00A3D278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B212D3119EE472C00A3D278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		0B212D4319EE472C00A3D278 /* Project105Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project105Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B212D4819EE472C00A3D278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B212D4919EE472C00A3D278 /* Project105Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project105Tests.swift; sourceTree = "<group>"; };
+		0B74BDDA19F03840005F3599 /* ShareTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTableViewDataSource.swift; sourceTree = "<group>"; };
 		0BA7149919EEE99600E1F38A /* ShareOverlay.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareOverlay.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA7149C19EEE99600E1F38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BA7149D19EEE99600E1F38A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +180,9 @@
 				0BA714C919EF3B9300E1F38A /* ReadingList.swift */,
 				0BA7149D19EEE99600E1F38A /* ShareViewController.swift */,
 				0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */,
+				0B209FDC19F05BE100BACD50 /* TableCell.xib */,
 				0BA7149B19EEE99600E1F38A /* Supporting Files */,
+				0B74BDDA19F03840005F3599 /* ShareTableViewDataSource.swift */,
 			);
 			path = ShareOverlay;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B209FDD19F05BE100BACD50 /* TableCell.xib in Resources */,
 				0BA714A019EEE99600E1F38A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 			files = (
 				0BA714CA19EF3B9300E1F38A /* ReadingList.swift in Sources */,
 				0BA714CD19EF3C4000E1F38A /* SwiftData.swift in Sources */,
+				0B74BDDB19F03840005F3599 /* ShareTableViewDataSource.swift in Sources */,
 				0BA7149E19EEE99600E1F38A /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
