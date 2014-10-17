@@ -52,16 +52,12 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
 
                 attachment.loadPreviewImageWithOptions(options) {
                     (decoder: NSSecureCoding!, error: NSError!) -> Void in
-                    println("Decoder \(decoder)");
                     if let image : UIImage = (decoder as? UIImage) {
-                        println("Got \(image)")
                         self.imageView.image = image;
-                    } else {
-                        println("No image")
                     }
                 }
 
-                /*
+                /* Doesn't work :(
                 attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
                 (decoder: NSSecureCoding!, error: NSError!) -> Void in
                 self.imageView.image = decoder as? UIImage
@@ -90,7 +86,6 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
         let frame = listContainer.frame;
         let h : CGFloat = imageView.frame.height; // table.frame.height;// +
         listContainer.frame = CGRect(x: frame.origin.x, y: UIScreen.mainScreen().bounds.height - h, width: frame.width, height: h)
-        println("Set \(h)");
     }
     
     private func setupListHeight() {
@@ -109,8 +104,6 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         let start = self.listContainer.frame;
         self.listContainer.frame.origin.y = start.origin.y + 100;
-        self.background.alpha = 0.0
-        self.listContainer.alpha = 0.0
 
         UIView.animateWithDuration(ANIM_DURATION, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.background.alpha = 1.0;
@@ -144,11 +137,9 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("Clicked");
         if (indexPath.row == 0) {
             self.getUrl() {
                 (var url : NSURL?) -> Void in
-                println("Got \(url)")
                 if (url != nil) {
                     Bookmarks.add(url!);
                     Bookmarks.printList();
@@ -169,7 +160,7 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.rowClicked()
         }
     }
-/*
+/* Left over from using the built in share UI
     func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
@@ -211,7 +202,6 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func rowClicked() -> Void {
         self.getUrl() {
             (var url : NSURL?) -> Void in
-            println("Got \(url)")
             if (url != nil) {
                 ReadingList.add(url!);
                 ReadingList.printToConsole()
