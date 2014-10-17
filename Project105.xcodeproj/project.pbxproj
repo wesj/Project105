@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B209FDD19F05BE100BACD50 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FDC19F05BE100BACD50 /* TableCell.xib */; };
+		0B209FF219F072B200BACD50 /* overlay_bookmark_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FEC19F072B200BACD50 /* overlay_bookmark_icon.png */; };
+		0B209FF319F072B200BACD50 /* overlay_bookmarked_already_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FED19F072B200BACD50 /* overlay_bookmarked_already_icon.png */; };
+		0B209FF419F072B200BACD50 /* overlay_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FEE19F072B200BACD50 /* overlay_check.png */; };
+		0B209FF519F072B200BACD50 /* overlay_readinglist_already_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FEF19F072B200BACD50 /* overlay_readinglist_already_icon.png */; };
+		0B209FF619F072B200BACD50 /* overlay_readinglist_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FF019F072B200BACD50 /* overlay_readinglist_icon.png */; };
+		0B209FF719F072B200BACD50 /* overlay_send_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FF119F072B200BACD50 /* overlay_send_tab_icon.png */; };
+		0B209FF919F0733100BACD50 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B209FF819F0733100BACD50 /* icon.png */; };
 		0B212D3219EE472C00A3D278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3119EE472C00A3D278 /* AppDelegate.swift */; };
 		0B212D3419EE472C00A3D278 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3319EE472C00A3D278 /* FirstViewController.swift */; };
 		0B212D3619EE472C00A3D278 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B212D3519EE472C00A3D278 /* SecondViewController.swift */; };
@@ -22,6 +28,9 @@
 		0BA714AB19EF133900E1F38A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA714AA19EF133900E1F38A /* libsqlite3.dylib */; };
 		0BA714CA19EF3B9300E1F38A /* ReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA714C919EF3B9300E1F38A /* ReadingList.swift */; };
 		0BA714CD19EF3C4000E1F38A /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA714CC19EF3C4000E1F38A /* SwiftData.swift */; };
+		0BAE601719F0CA5700F37322 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE601619F0CA5700F37322 /* Bookmarks.swift */; };
+		0BB380AB19F0E2E7006224F8 /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB380AA19F0E2E7006224F8 /* ShareCell.xib */; };
+		0BB380AD19F0E37F006224F8 /* ShareListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB380AC19F0E37F006224F8 /* ShareListCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +72,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B209FDC19F05BE100BACD50 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		0B209FEC19F072B200BACD50 /* overlay_bookmark_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_bookmark_icon.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_bookmark_icon.png"; sourceTree = "<group>"; };
+		0B209FED19F072B200BACD50 /* overlay_bookmarked_already_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_bookmarked_already_icon.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_bookmarked_already_icon.png"; sourceTree = "<group>"; };
+		0B209FEE19F072B200BACD50 /* overlay_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_check.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_check.png"; sourceTree = "<group>"; };
+		0B209FEF19F072B200BACD50 /* overlay_readinglist_already_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_readinglist_already_icon.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_readinglist_already_icon.png"; sourceTree = "<group>"; };
+		0B209FF019F072B200BACD50 /* overlay_readinglist_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_readinglist_icon.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_readinglist_icon.png"; sourceTree = "<group>"; };
+		0B209FF119F072B200BACD50 /* overlay_send_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlay_send_tab_icon.png; path = "../../mozilla-central/mobile/android/base/resources/drawable-xhdpi/overlay_send_tab_icon.png"; sourceTree = "<group>"; };
+		0B209FF819F0733100BACD50 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = "../../mozilla-central/mobile/android/branding/official/res/drawable-xxhdpi/icon.png"; sourceTree = "<group>"; };
 		0B212D2C19EE472C00A3D278 /* Project105.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project105.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B212D3019EE472C00A3D278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B212D3119EE472C00A3D278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +99,9 @@
 		0BA714AF19EF1B7C00E1F38A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		0BA714C919EF3B9300E1F38A /* ReadingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingList.swift; path = Project105/ReadingList.swift; sourceTree = SOURCE_ROOT; };
 		0BA714CC19EF3C4000E1F38A /* SwiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftData.swift; path = Project105/SwiftData.swift; sourceTree = SOURCE_ROOT; };
+		0BAE601619F0CA5700F37322 /* Bookmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
+		0BB380AA19F0E2E7006224F8 /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
+		0BB380AC19F0E37F006224F8 /* ShareListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareListCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,13 +194,22 @@
 		0BA7149A19EEE99600E1F38A /* ShareOverlay */ = {
 			isa = PBXGroup;
 			children = (
+				0B209FEC19F072B200BACD50 /* overlay_bookmark_icon.png */,
+				0B209FF819F0733100BACD50 /* icon.png */,
+				0B209FED19F072B200BACD50 /* overlay_bookmarked_already_icon.png */,
+				0B209FEE19F072B200BACD50 /* overlay_check.png */,
+				0B209FEF19F072B200BACD50 /* overlay_readinglist_already_icon.png */,
+				0B209FF019F072B200BACD50 /* overlay_readinglist_icon.png */,
+				0B209FF119F072B200BACD50 /* overlay_send_tab_icon.png */,
 				0BA714CC19EF3C4000E1F38A /* SwiftData.swift */,
 				0BA714C919EF3B9300E1F38A /* ReadingList.swift */,
 				0BA7149D19EEE99600E1F38A /* ShareViewController.swift */,
 				0BA7149F19EEE99600E1F38A /* MainInterface.storyboard */,
-				0B209FDC19F05BE100BACD50 /* TableCell.xib */,
 				0BA7149B19EEE99600E1F38A /* Supporting Files */,
 				0B74BDDA19F03840005F3599 /* ShareTableViewDataSource.swift */,
+				0BAE601619F0CA5700F37322 /* Bookmarks.swift */,
+				0BB380AA19F0E2E7006224F8 /* ShareCell.xib */,
+				0BB380AC19F0E37F006224F8 /* ShareListCellTableViewCell.swift */,
 			);
 			path = ShareOverlay;
 			sourceTree = "<group>";
@@ -316,8 +343,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B209FDD19F05BE100BACD50 /* TableCell.xib in Resources */,
+				0B209FF519F072B200BACD50 /* overlay_readinglist_already_icon.png in Resources */,
+				0B209FF319F072B200BACD50 /* overlay_bookmarked_already_icon.png in Resources */,
+				0B209FF919F0733100BACD50 /* icon.png in Resources */,
+				0B209FF419F072B200BACD50 /* overlay_check.png in Resources */,
+				0B209FF719F072B200BACD50 /* overlay_send_tab_icon.png in Resources */,
 				0BA714A019EEE99600E1F38A /* MainInterface.storyboard in Resources */,
+				0BB380AB19F0E2E7006224F8 /* ShareCell.xib in Resources */,
+				0B209FF619F072B200BACD50 /* overlay_readinglist_icon.png in Resources */,
+				0B209FF219F072B200BACD50 /* overlay_bookmark_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +381,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA714CA19EF3B9300E1F38A /* ReadingList.swift in Sources */,
+				0BAE601719F0CA5700F37322 /* Bookmarks.swift in Sources */,
+				0BB380AD19F0E37F006224F8 /* ShareListCellTableViewCell.swift in Sources */,
 				0BA714CD19EF3C4000E1F38A /* SwiftData.swift in Sources */,
 				0B74BDDB19F03840005F3599 /* ShareTableViewDataSource.swift in Sources */,
 				0BA7149E19EEE99600E1F38A /* ShareViewController.swift in Sources */,

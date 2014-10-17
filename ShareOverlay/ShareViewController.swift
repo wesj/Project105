@@ -13,71 +13,163 @@ import MobileCoreServices
 class ShareViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var items: [String] = ["Send to device", "Bookmark Page", "Add to reading list"]
+    var images: [String] = ["overlay_send_tab_icon.png", "overlay_bookmark_icon.png", "overlay_readinglist_icon.png"]
 
     @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var background: UIVisualEffectView!
-    
-    let ANIM_DURATION = 0.25
+    @IBOutlet weak var listContainer: UIView!
+    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleView: UILabel!
+    @IBOutlet weak var urlView: UILabel!
 
+    let ANIM_DURATION = 0.5
+
+    override func loadView() {
+        super.loadView()
+        listContainer.alpha = 0;
+        background.alpha = 0;
+
+        var myExtensionContext : NSExtensionContext = self.extensionContext!
+        var inputItems = myExtensionContext.inputItems
+        
+        for item in inputItems as [NSExtensionItem] {
+            setTitle(item.attributedContentText?.string as String?)
+            for attachment in item.attachments as [NSItemProvider] {
+                attachment.loadItemForTypeIdentifier(kUTTypeURL as NSString, options: nil) {
+                    (decoder: NSSecureCoding!, error: NSError!) -> Void in
+
+                    // This is semi-async, and if we find the text late, the extension view doesn't update. Need a better solution here
+                    if let url : NSURL = (decoder as? NSURL) {
+                        self.setUrl(url.absoluteString!);
+                    } else {
+                        self.setUrl("");
+                    }
+                }
+
+                let options: [NSObject : AnyObject] = [
+                    NSItemProviderPreferredImageSizeKey: imageView.frame.width
+                ];
+
+                attachment.loadPreviewImageWithOptions(options) {
+                    (decoder: NSSecureCoding!, error: NSError!) -> Void in
+                    println("Decoder \(decoder)");
+                    if let image : UIImage = (decoder as? UIImage) {
+                        println("Got \(image)")
+                        self.imageView.image = image;
+                    } else {
+                        println("No image")
+                    }
+                }
+
+                /*
+                attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
+                (decoder: NSSecureCoding!, error: NSError!) -> Void in
+                self.imageView.image = decoder as? UIImage
+                }
+                */
+            }
+        }
+
+        setupListHeight();
+        setupContainerHeight();
+    }
+
+    private func setTitle(title: NSString?) {
+        if (title == nil) {
+            titleView.text = "";
+            return;
+        }
+        titleView.text = title;
+    }
+    
+    private func setUrl(url: NSString) {
+        urlView!.text = url
+    }
+    
+    private func setupContainerHeight() {
+        let frame = listContainer.frame;
+        let h : CGFloat = imageView.frame.height; // table.frame.height;// +
+        listContainer.frame = CGRect(x: frame.origin.x, y: UIScreen.mainScreen().bounds.height - h, width: frame.width, height: h)
+        println("Set \(h)");
+    }
+    
+    private func setupListHeight() {
+        let frame = table.frame;
+        let c : CGFloat  = CGFloat(items.count);
+        let h : CGFloat = 44 * c
+        table.frame = CGRect(x: frame.origin.x, y: UIScreen.mainScreen().bounds.height - h, width: frame.width, height: h)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self;
         table.delegate = self;
-
-        let frame = table.frame;
-        let c : CGFloat  = CGFloat(items.count);
-        let h : CGFloat = 44 * c
-        println("Height \(table.rowHeight) \(h)")
-        table.frame = CGRect(x: frame.origin.x, y: UIScreen.mainScreen().bounds.height - h, width: frame.width, height: h)
-    }
-
-    override func viewDidDisappear(animated: Bool) {
-        UIView.animateWithDuration(ANIM_DURATION, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-            self.table.alpha = 0;
-            self.background.alpha = 0;
-            self.table.frame.origin.y = self.table.frame.origin.y + 100
-            }, completion: { (ret: Bool) -> Void in
-                println("Done 2 \(ret)");
-        })
     }
     
     override func viewDidAppear(animated: Bool) {
-        background.alpha = 0;
-        self.table.alpha = 0;
-        let start = self.table.frame;
-        self.table.frame.origin.y = start.origin.y + 100;
+        let start = self.listContainer.frame;
+        self.listContainer.frame.origin.y = start.origin.y + 100;
+        self.background.alpha = 0.0
+        self.listContainer.alpha = 0.0
 
         UIView.animateWithDuration(ANIM_DURATION, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-            self.background.alpha = 1.0;
+                self.background.alpha = 1.0;
+                self.listContainer.alpha = 1.0;
+                self.listContainer.frame = start
             }, completion: { (ret: Bool) -> Void in
-            println("Done \(ret)");
-        })
-
-        UIView.animateWithDuration(ANIM_DURATION, delay: ANIM_DURATION, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-            self.table.alpha = 1.0;
-            self.table.frame = start
-            }, completion: { (ret: Bool) -> Void in
-                println("Done \(ret)");
         })
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        UIView.animateWithDuration(ANIM_DURATION, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            self.background.alpha = 0;
+            self.listContainer.alpha = 0;
+            self.listContainer.frame.origin.y = self.listContainer.frame.origin.y + 100;
+            }, completion: { (ret: Bool) -> Void in
+        })
+        self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
     
-    let CellIndentifier: NSString = "ListPrototypeCell"
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // View recycling doesn't seem to work in Extensions. At least not with a View from the storyboard.
         // Thankfully, this list is really short.
-        var cell:UITableViewCell = UITableViewCell(); //self.table.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
+        var cell:ShareListCellTableViewCell = ShareListCellTableViewCell();
         cell.textLabel?.text = self.items[indexPath.row]
+        cell.shareImageView?.image = UIImage(named: self.images[indexPath.row])
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.rowClicked()
+        println("Clicked");
+        if (indexPath.row == 0) {
+            self.getUrl() {
+                (var url : NSURL?) -> Void in
+                println("Got \(url)")
+                if (url != nil) {
+                    Bookmarks.add(url!);
+                    Bookmarks.printList();
+                    /* We could post some JSON to the server
+                    var url : NSURL = NSURL(string: "http://www.google.com")!
+                    var request: NSURLRequest = NSURLRequest(URL:url)
+                    let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+                    let session = NSURLSession(configuration: config)
+                    let task : NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+                        println("Got \(error): \(response)");
+                    });
+                    task.resume()
+                    */
+                    self.viewDidDisappear(true);
+                }
+            }
+        } else {
+            self.rowClicked()
+        }
     }
-
+/*
     func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
@@ -113,7 +205,7 @@ class ShareViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     private func openApp() {
     }
-    
+*/
     // A simple function to be called whenever you click on one of the "configuration" rows.
     // Adds the current url to the ReadingList, and closes the dialog
     private func rowClicked() -> Void {
