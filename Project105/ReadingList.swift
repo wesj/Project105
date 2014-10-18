@@ -9,6 +9,21 @@
 import UIKit
 
 public struct ReadingList {
+    public static func getAll() -> [NSURL] {
+        var list : [NSURL] = [];
+        if (self.createDB()) {
+            let (rows, err) = SD.executeQuery("SELECT * FROM Urls")
+            if (err == nil) {
+                println("Found \(rows.count) rows")
+                for row in rows as [SwiftData.SDRow] {
+                    let url : String = row.values["Url"]?.value as String
+                    list.append(NSURL(string: url)!)
+                }
+            }
+        }
+        return list
+    }
+
     public static func printToConsole() {
         if (self.createDB()) {
             let (rows, err) = SD.executeQuery("SELECT * FROM Urls")
